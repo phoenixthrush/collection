@@ -1,0 +1,42 @@
+# Ignore compiled files and build directories
+*.class
+*.jar
+*.war
+*.ear
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.dylib
+*.dll
+/build/
+/dist/
+/out/
+/target/
+/.cargo/
+/.stack/
+/.bundle/
+/.vagrant/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore dependencies and virtual environments
+/node_modules/
+/bower_components/
+/venv/
+/.venv/

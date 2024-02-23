@@ -1,0 +1,16 @@
+Aufgabe 1 – Die Ampelschaltung
+
+R	= !A && !B || !A B
+Ge	= !A && B || A && B
+Gr	= A && !B
+
+
+
+Aufgabe 2 – Die fortgeschrittene Ampelschaltung
+
+R	= !(!A !B !C || !A !B C || A B C)
+Ge	= !A !B C || A B !C
+Gr	= !A !B !C || A B C
+
+FR	= !(!A B C || A !B !C)
+FG	= !A B C || A !B !C
