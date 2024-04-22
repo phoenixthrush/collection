@@ -126,6 +126,19 @@ class GradeCalculator {
          * bis der Benutzer eine spezielle Eingabe (z.B. -1) macht.
          * Anschließend soll das Programm den Durchschnitt dieser Noten berechnen und
          * ausgeben.
+         *
+         * Erweitere das Programm soweit das neben den Noten aus das Fach angegeben
+         * wird.
+         * Nach der Eingabe von -1 soll neben der auch eine Leistungsübersicht
+         * ausgegeben werden.
+         *
+         * Beispielhafte Ausgabe:
+         *
+         * Deutsch: 10
+         * PRIN: 15
+         * Mathe: 5
+         * ---------------------------
+         * Schnitt: 10
          */
 
         Scanner scanner = new Scanner(System.in);
