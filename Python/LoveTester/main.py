@@ -1,26 +1,39 @@
-# must be lowered when input
-#name_1 = input("Enter name: ")
-#name_2 = input("Enter name: ")
+name_1 = input("Enter name: ").lower()
+name_2 = input("Enter name: ").lower()
 
-name_1 = "foo"
-name_2 = "bar"
+# remove duplicates
+concat = ""
+for char in name_1:
+    if char not in concat:
+        concat += char
+for char in name_2:
+    if char not in concat:
+        concat += char
 
-name = name_1.lower() + name_2.lower()
-name_deduplicated = [i for n, i in enumerate(name) if i not in name[:n]]
+# DEBUG print(concat)
 
-character_count = []
+# count sum of characters
+sum_of_characters = []
+for char in concat:
+    sum_of_characters.append(name_1.count(char) + name_2.count(char))
 
-for char in name_deduplicated:
-    # print(f"Debug: {char} - {name_1.count(char) + name_2.count(char)}")    
-    character_count.append(name_1.count(char) + name_2.count(char))
+# DEBUG print(sum_of_characters)
 
+# loop until only two elements left
+while len(sum_of_characters) > 2:
+    # sum pairs of elements in the list
+    sum_of_characters_two = []
+    for i in range(len(sum_of_characters) // 2):
+        sum_of_characters_two.append(sum_of_characters[i] + sum_of_characters[-i - 1])
+    if len(sum_of_characters) % 2 != 0:
+        sum_of_characters_two.append(sum_of_characters[len(sum_of_characters) // 2])
 
+    # DEBUG print(sum_of_characters_two)
 
-print(character_count)
+    # update list for next round
+    sum_of_characters = sum_of_characters_two
 
-character_count_sum = []
-for x in range(len(character_count)//2):
-    # print(f"{x}: {character_count[x]} - {character_count[-1 - x]}")
-    character_count_sum.append(character_count[x] + character_count[-1 - x])
+name_1 += "'" if name_1[-1] == 's' else "'s"
+name_2 += "'" if name_2[-1] == 's' else "'s"
 
-print(character_count_sum)
+print(f"{name_1.capitalize()} & {name_2.capitalize()} Love Percentage is {sum_of_characters[0]}{sum_of_characters[1]}%.")
